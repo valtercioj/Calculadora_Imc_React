@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Resultado from "../src/Resultado";
+import Result from "../src/Result";
 import "../src/css/input.css";
 
-function Peso() {
+function Input() {
   const [peso, setPeso] = useState();
   const [altura, setAltura] = useState();
 
@@ -10,21 +10,23 @@ function Peso() {
     <div className="container">
       <label>Digite seu peso</label>
       <input
-        type="text"
+        type="number"
         placeholder="Digite seu peso"
+        required="required"
         value={peso}
         onChange={(e) => setPeso(e.target.value)}
       />
       <label>Digite Sua altura</label>
       <input
-        type="text"
+        type="number"
+        required="required"
         placeholder="Digite sua altura"
         value={altura}
         onChange={(e) => setAltura(e.target.value)}
       />
-      <Resultado peso={peso} altura={altura} />
+      <Result peso={peso} altura={altura} />
     </div>
   );
 }
 
-export default Peso;
+export default Input;
